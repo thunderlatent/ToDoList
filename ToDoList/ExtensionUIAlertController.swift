@@ -22,26 +22,27 @@ extension ListViewController
                 let totalText = ListModel(title: text0, subtitle: text1)
                 if alertTitle == "新增"
                 {
-                    self.listData.insert(totalText, at: 0)
+                    self.listDatas.insert(totalText, at: 0)
                     print("新增")
+//                    self.toDoListTableView.reloadData()
+                    self.toDoListTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
                 }
                 if let indexPath = indexPath{
-                    if alertTitle == "修改"
+//                    if alertTitle == "修改"
+//                    {
+//                        
+//                        
+////                        self.listDatas[indexPath.row] = totalText
+//                    }else
+                        if alertTitle == "插入"
                     {
-                        self.listData[indexPath.row] = totalText
-                    }else if alertTitle == "插入"
-                    {
-                        self.listData.insert(totalText, at: indexPath.row)
+                        self.listDatas.insert(totalText, at: indexPath.row)
                         print("indexPath.row\(indexPath.row)")
+                        self.toDoListTableView.insertRows(at: [indexPath], with: .automatic)
                     }
                 }
-                
             }
             self.saveData()
-            self.toDoListTableView.reloadData()
-//            UserDefaults.standard.set(self.listData, forKey: "listData")
-//            UserDefaults.setValue(self.listData, forKey: "listData")
-            
         }
         alert.addTextField { (titleTF) in
             if let text0 = text0
