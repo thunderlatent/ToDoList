@@ -49,7 +49,7 @@ extension ListViewController
             {
                 titleTF.text = text0
             }
-            titleTF.placeholder = "輸入事項EX:人事時地物"
+            titleTF.placeholder = "想幹點啥？？"
         }
         alert.addTextField { (subtitleTF) in
             
@@ -57,7 +57,7 @@ extension ListViewController
             {
                 subtitleTF.text = text1
             }
-            subtitleTF.placeholder = "輸入何時執行EX:么拐兩洞"
+            subtitleTF.placeholder = "啥時去做？？"
         }
         alert.addAction(okAction)
         alert.addAction(cancleAction)

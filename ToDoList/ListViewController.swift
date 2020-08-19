@@ -109,6 +109,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBAction func sortBtn(_ sender: UIBarButtonItem) {
         self.toDoListTableView.isEditing.toggle()
         sender.image = self.toDoListTableView.isEditing ? UIImage(systemName: "xmark.square") : UIImage(systemName: "arrow.up.arrow.down")
+
     }
 }
 
